@@ -1,0 +1,26 @@
+.colGr{
+
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 20px;
+
+    &__col{
+
+        grid-column-start: auto;
+
+        @for $i from 1 through 12{
+
+            &_#{$i}{
+                grid-column-end: span #{$i};
+            }
+        }
+
+    }
+
+}
+
+@media screen and (max-width: $tabletWidthMax){
+    .colGr{
+        grid-template-columns: 1fr;
+    }
+}

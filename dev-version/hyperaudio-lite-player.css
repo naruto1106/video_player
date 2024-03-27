@@ -1,0 +1,940 @@
+/*! (C) The Hyperaudio Project. MIT @license: en.wikipedia.org/wiki/MIT_License. */
+/* Updated for Version 2.1 */
+
+.hyperaudio-transcript .strikethrough {
+  text-decoration: line-through;
+}
+
+.hyperaudio-transcript .annotation,
+.hyperaudio-transcript .parannotation {
+  opacity: 0.7;
+}
+
+.hyperaudio-transcript .highlight {
+  background-color: yellow;
+}
+
+.hyperaudio-transcript .highlight.active {
+  background-color: lightGreen;
+}
+
+.hyperaudio-transcript header {
+  font-size: 200%;
+}
+
+/*.hyperaudio-transcript a {
+  cursor: pointer;
+  color: #000;
+}*/
+
+
+.hyperaudio-transcript a,
+a.link {
+  border: 0px;
+}
+
+.hyperaudio-transcript .read {
+  color: #000;
+}
+
+.hyperaudio-transcript .active>.active {
+  color: #000;
+}
+
+.hyperaudio-transcript .unread {
+  color: #777;
+}
+
+.hyperaudio-transcript .search-match {
+  background-color: pink;
+}
+
+.hyperaudio-transcript .share-match {
+  background-color: #66ffad;
+}
+
+.hyperaudio-transcript sub:before {
+  content: '\231C';
+}
+
+.hyperaudio-transcript sub.highlight-duration:before {
+  content: '\231D';
+}
+
+.hyperaudio-transcript h5 {
+  font-size: 130%;
+}
+
+[data-m] {
+  cursor: pointer;
+}
+
+.speaker {
+  font-weight: bold;
+}
+
+
+.home-main-text {
+  color: #000;
+  font-family: "Lexend", sans-serif;
+  font-size: 42.356px;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.home-sub-text {
+  font-family: "Red Hat Display";
+  color: #4E4E4E;
+  font-size: 29.339px;
+  width: 500px;
+  margin: 0 auto;
+  font-weight: 700;
+}
+
+.kids-list {
+  display: flex;
+  list-style-type: none;
+  text-align: center;
+  flex-wrap: wrap;
+
+}
+
+.kids-list li {
+  margin-top: 15px;
+  margin-inline: 15px;
+}
+
+.kids-item {
+  text-decoration: none;
+  color: #606060;
+  font-family: Roboto;
+  font-weight: 700;
+}
+
+.main-content {
+  background-image: url('../assets/img/login-background.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: calc(100vh - 110px);
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100vw;
+
+  /* opacity: 0.7; */
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Adjust the last value (0.5) to control darkness */
+  }
+}
+
+/* .explorer-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+} */
+
+.explorer-title {
+  display: flex;
+  justify-content: center;
+  width: 829px;
+  height: 150px;
+  flex-direction: column;
+  flex-shrink: 0;
+  color: #FFF;
+  text-align: center;
+  font-family: "Lexend Deca";
+  text-transform: uppercase;
+  /* font-size: 30px; */
+  margin: 0 auto;
+
+}
+
+.explorer-title-font {
+  font-family: "Lexend Deca";
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.explorer-active {
+  background-image: url("../assets/img/active.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border-radius: 31.877px;
+  width: 467px;
+  height: 350px;
+  margin: 0 auto;
+  text-transform: uppercase;
+  color: #FFF;
+  font-size: 50px;
+  text-align: center;
+  font-family: "Red Hat Display";
+  font-weight: 700;
+}
+
+.explorer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  text-transform: uppercase;
+  margin-top: 60px;
+  text-decoration: none;
+}
+
+.explorer-bottom-item {
+  background: #FD7500;
+  border-radius: 100px;
+  height: 60px;
+  color: #FFF;
+  text-align: center;
+  font-family: "Red Hat Display";
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  padding-inline: 130px;
+  font-weight: 700;
+}
+
+.categories_style {
+  color: #000;
+  font-family: Lexend;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 45px;
+  /* 150% */
+}
+
+.category-item {
+  text-decoration: none;
+  font-size: 18px;
+  background: #FD7500;
+  height: 40px;
+  border-radius: 20px;
+  padding: 6px 17px;
+  color: white;
+  margin: 10px;
+  font-family: "Red Hat Display";
+  font-weight: 700;
+}
+
+.category-item-contain {
+  margin: 10px 10px 10px 0;
+  flex: 0 0 auto;
+}
+
+.activity-image-contain {
+  width: fit-content;
+  position: relative;
+  margin: 10px;
+  flex: 0 0 auto;
+}
+
+.activity-star-position {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: #FD7500;
+  box-shadow: 0px 2.692px 2.692px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  border-radius: 20px;
+  padding: 10px 15px;
+  color: white;
+  font-size: 18px;
+  font-family: "Red Hat Display";
+  font-weight: 700;
+}
+
+.activity-image-item {
+  max-height: 250px;
+  width: 400px;
+  border-radius: 20px;
+}
+
+.view-poster-image {
+  width: 100%;
+  height: 80%;
+}
+
+.poster-start-activity {
+
+  background: #FD7500;
+  width: 450px;
+  height: 60px;
+  border-radius: 30px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 30px;
+  padding: 10px 35px;
+  z-index: 99;
+  font-family: Inter;
+  font-weight: 700;
+  margin: 20px auto;
+}
+
+.mobile-menu-position {
+  height: 100px;
+}
+
+.quiz-done {
+  background: #FD7500;
+  height: 40px;
+  border-radius: 20px;
+  color: #FFF;
+  text-align: center;
+  font-family: "Red Hat Display";
+  font-size: 20px;
+  padding: 0px 50px;
+  border: none;
+  margin-bottom: 30px;
+  margin-top: 25px;
+  font-weight: 700;
+}
+
+.hyperaudio-player {
+  z-index: 900;
+  position: relative;
+  /* width: 400px; */
+}
+
+.how-it-works {
+  color: #000;
+  /* text-align: center; */
+  font-size: 23px;
+  font-weight: bold;
+  margin: 20px;
+  font-family: "Red Hat Display";
+  font-weight: 700;
+}
+
+.how-it-works1 {
+  color: #000;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 20px;
+  font-family: "Red Hat Display";
+  font-weight: 700;
+}
+
+.gallery-header-title {
+  color: #FD7500;
+  text-align: center;
+  font-family: "Red Hat Display";
+  font-size: 30px;
+  margin-top: 30px;
+  font-weight: 700;
+}
+
+.gallery-header-title-sub {
+  color: #000;
+  text-align: center;
+  font-family: "Red Hat Display";
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.gallery-item-contain {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  overflow-x: auto;
+  height: 350px;
+}
+
+.gallery-item {
+  width: 230px;
+  height: 310px;
+  flex: 0 0 auto;
+  margin-inline: 20px;
+  position: relative;
+}
+
+.lock-icon {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #FD7500;
+}
+
+.locg-icon-image {
+  width: 30px;
+  object-fit: contain;
+}
+
+
+
+.gallery-item-image {
+  width: 100%;
+  height: 100%;
+  /* object-fit: cover; */
+  border-radius: 22px;
+  /* box-shadow: 0px 4.479px 4.479px 0px rgba(0, 0, 0, 0.25); */
+}
+
+.active-gallery-contain {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.active-gallery-item {
+  display: flex;
+  padding: 20px;
+  background: #F8F8F8;
+  border-radius: 17.532px;
+  margin-inline: 15px;
+  width: 390px;
+}
+
+.active-gallery-item-image {
+  width: 210px;
+  height: 280px;
+}
+
+.active-gallery-item-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 17.532px;
+  object-fit: contain;
+}
+
+.active-gallery-item-content {
+  padding-inline: 10px;
+  padding-top: 20px;
+}
+
+.activity-play {
+  color: #FFF;
+  text-align: center;
+  font-size: 17.532px;
+  width: 140px;
+  height: 40px;
+  background: #FD7500;
+  border-radius: 20px;
+  border: none;
+  margin-top: 15px;
+}
+
+.custom-select {
+  position: relative;
+  display: inline-block;
+}
+
+.custom-select select {
+  display: block;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+  height: 100%;
+  /* border: none; */
+  border-radius: 20px;
+  padding-inline: 20px;
+  background-color: #f3f3f3;
+  cursor: pointer;
+}
+
+.custom-select .select-arrow {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.explorer-kids-image {
+  max-width: 250px;
+  max-height: 250px;
+  border-radius: 25px;
+}
+
+.quiz-item {
+  width: 300px;
+  height: 210px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  background: #FAFAFA;
+  border-radius: 20px;
+  box-shadow: 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
+}
+
+.quiz-item.active {
+  border: 1px solid #FD7500;
+}
+
+.answerImage {
+  max-width: 135px;
+  max-height: 135px;
+  object-fit: contain;
+}
+
+.quiz-item-contain {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 700px;
+  margin: 0 auto;
+}
+
+.my-active-gallery-contain {
+  padding: 10px;
+}
+
+.answerText {
+  font-size: 25px;
+  color: #000;
+  text-align: center;
+  font-family: Lexend;
+  font-weight: 600;
+  word-wrap: break-word;
+}
+
+.answerText-image {
+  font-size: 18px;
+  color: #000;
+  text-align: center;
+  font-family: Lexend;
+  font-weight: 600;
+  word-wrap: break-word;
+}
+
+.questionText {
+  color: #000;
+  text-align: center;
+  font-family: Lexend;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px;
+}
+
+.speaker-contain {
+  background: #FD7500;
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-inline: 20px;
+}
+
+.speaker-contain img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.questionImage {
+  width: 100%;
+  height: 80%;
+  border-radius: 20px;
+  margin-top: 80px;
+}
+
+.questionImage img {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  /* object-fit: cover; */
+}
+
+.lessonContent {
+  width: 700px;
+  text-align: justify;
+  padding: 20px 30px;
+  font-family: "Red Hat Display";
+  color: #000;
+  font-weight: 500;
+  font-size: 25px;
+}
+
+.submit-contain {
+  width: 100%;
+  height: calc(100vh - 110px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.submit-contain-text {
+  color: #FFF;
+  text-align: center;
+  font-family: "Lexend Deca";
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.submit-goto {
+  color: #FFF;
+  text-align: center;
+  font-family: "Red Hat Display";
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 700;
+  background: #FD7500;
+  /* width: 314px; */
+  /* height: 65px; */
+  border-radius: 32.5px;
+  text-decoration: none;
+  padding:15px 40px;
+
+}
+
+@media screen and (max-width: 1300px) {
+  .explorer-bottom {
+    justify-content: space-between;
+  }
+}
+
+@media screen and (max-width:992px) {
+  .main-content111 {
+    height: 100vh;
+  }
+
+  .explorer-title {
+    width: 740px;
+  }
+
+  .explorer-kids-image {
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 25px;
+  }
+
+  .kids-list li {
+    margin-inline: 5px;
+  }
+
+  .explorerbutton {
+    font-size: 18px;
+  }
+
+  .explorer-bottom-item {
+    padding-inline: 90px;
+  }
+
+  .active-gallery-contain {
+    display: flex;
+    justify-content: center;
+  }
+
+  .active-gallery-item {
+    margin-top: 30px;
+    margin-inline: unset;
+
+  }
+
+  .explorer-bottom {
+    display: none;
+  }
+
+  .explorer-main {
+    padding-top: 70px;
+  }
+
+  .categories-mobile {
+    margin-top: 60px;
+  }
+
+  .gallery-header-title {
+    margin-top: 90px;
+  }
+
+
+
+  .my-active-gallery-contain {
+    padding-bottom: 100px;
+
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .kids-list {
+    padding-left: unset !important;
+    justify-content: space-between;
+  }
+
+  .explorerbutton {
+    font-size: 18px;
+  }
+
+  .explorer-title {
+    width: 540px;
+  }
+
+  .explorer-bottom {
+    flex-direction: column;
+  }
+
+  .explorer-bottom-item {
+    width: 440px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .gallery-header-title {
+    font-size: 25px;
+  }
+
+  .how-it-works {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .how-it-works1 {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .quiz-item-contain {
+    width: 550px;
+  }
+
+  .quiz-item {
+    width: 220px;
+    height: 190px;
+  }
+
+  .answerText {
+    font-size: 20px;
+  }
+
+  .lessonContent {
+    width: 100%;
+    font-size: 20px;
+    padding: 20px 0px;
+  }
+
+}
+
+@media screen and (max-width: 576px) {
+  .kids-list {
+    justify-content: space-between;
+  }
+
+  .explorer-kids-image {
+    max-width: 165px;
+    max-height: 165px;
+    border-radius: 20px;
+  }
+
+  .home-sub-text {
+    width: 360px;
+  }
+
+  .home-sub-text h5 {
+    font-size: 16px !important;
+  }
+
+  .explorer-title {
+    width: 370px;
+  }
+
+  .explorer-title h4 {
+    font-size: 20px !important;
+  }
+
+  .explorer-main {
+    padding-top: 100px;
+  }
+
+  .explorer-active {
+    width: 370px;
+    height: 250px;
+    font-size: 30px;
+  }
+
+  .explorer-bottom-item {
+    width: 300px;
+    height: 45px;
+    padding-inline: unset;
+  }
+
+  .activity-image-item {
+    max-height: 230px;
+    width: 340px;
+    border-radius: 20px;
+  }
+
+  /* .hyperaudio-player {
+    width: 320px;
+  } */
+
+  .gallery-header-title {
+    font-size: 20px;
+  }
+
+  .gallery-header-title-sub {
+    font-size: 16px;
+  }
+
+  .active-gallery-item {
+    width: 340px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .quiz-item-contain {
+    width: 370px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .quiz-item {
+    width: 300px;
+    height: 210px;
+  }
+
+  .answerText {
+    font-size: 25px;
+  }
+
+  .poster-start-activity {
+    width: 360px;
+    font-size: 20px;
+  }
+  .submit-contain-text {
+    font-size: 27px;
+  }
+
+}
+
+
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 999;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 548px;
+  background: #FD7500;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+}
+
+/* The Close Button */
+.close {
+  color: #FD7500;
+  float: right;
+  font-size: 45px;
+  font-weight: bold;
+  background: white;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  line-height: 35px;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+.modal-active-btn {
+  border-radius: 100px;
+  background: #FFF;
+  height: 50px;
+  width: 350px;
+  text-decoration: none;
+  color: #FD7500;
+  text-align: center;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  margin: 0 auto;
+}
+
+.confirm-message {
+  font-size: 25px;
+  padding: 10px;
+}
+
+.modal-cancel-btn {
+  padding-top: 30px;
+  font-size: 25px;
+}
+
+.confirm-content {
+  margin-top: 60px;
+}
+
+.position-close {
+  position: absolute;
+  right: 10px;
+}
+
+@media screen and (max-width: 576px) {
+  .modal-content {
+    width: 100%;
+    height: calc(100vh - 110px);
+  }
+
+  .confirm-content {
+    margin-top: 160px;
+  }
+
+  .modal-active-btn {
+    width: 300px;
+  }
+
+}

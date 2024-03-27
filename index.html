@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>Drawing game</title>
+    <link rel="stylesheet" href="./dist/bundle.css">
+</head>
+<body>
+    <h1>Drawing game</h1>
+    <div class="colGr">
+        <div class="colGr__col_3">
+            <h2>Tools</h2>
+            <button class="tools__button" id="tool-erase-canvases">Erase</button>
+            <button class="tools__button" id="load-image-to-source">Load Image</button>
+            <button class="tools__button" id="tool-compare-canvases">Compare</button>
+            <p class="tools__overlap">Overlap: <span id="tool-output-overlap"></span></p>
+            <img src="http://devbox.getframebright.com/src/img/a-transparent.png" width="400" height="400" style="width: 250px; height: 250px;" id="source-image">
+        </div>
+        <div class="colGr__col_9">
+            <h2>Drawing area</h2>
+            <div class="colGr">
+                <div class="colGr__col_6">
+                    <h3>Source Canvas</h3>
+                    <canvas class="gameCanvas" id="canvas-source"></canvas>
+                </div>
+                <div class="colGr__col_6">
+                    <h3>Destination Canvas</h3>
+                    <div id="canvas-replica-loaded-image" style="width: 400px; height: 400px"></div>
+                    <canvas class="gameCanvas" id="canvas-replica" inactive></canvas>
+                </div>
+                <div class="colGr__col_6" id="comparison__canvas" style="display: none"></div>
+                <div class="colGr__col_6" style="position: relative;visibility: hidden;">
+                    <canvas class="gameCanvas" id="comparison__canvas_1" width="400" height="400" style="position: absolute;"></canvas>
+                    <canvas class="gameCanvas" id="comparison__canvas_1_resized" width="400" height="400" style="z-index: 5; top: 0; position: absolute; background-color: white;  "></canvas>
+                </div>
+                <div class="colGr__col_6" style="position: relative;visibility: hidden;">
+                    <canvas class="gameCanvas" id="comparison__canvas_2" width="400" height="400" style="position: absolute;"></canvas>
+                    <canvas class="gameCanvas" id="comparison__canvas_2_resized" width="400" height="400" style="z-index: 5; top: 0; position: absolute; background-color: white;"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./dist/index.js"></script>
+    <!-- <script src="./dist/bundle.js"></script> -->
+    
+</body>
+</html>

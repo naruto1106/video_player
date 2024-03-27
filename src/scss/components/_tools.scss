@@ -1,0 +1,30 @@
+.tools{
+
+    &__button{
+        display: block;
+        width: 100%;
+        max-width: 200px;
+        height: 35px;
+        margin-bottom: 15px;
+        cursor: pointer;
+
+        &_mobile{
+            display: none;
+        }
+    }
+
+}
+
+@media screen and (max-width: $tabletWidthMax) {
+    .tools{
+
+        &__button{
+
+            &_mobile{
+                display: block;
+            }
+
+        }
+
+    }
+}
